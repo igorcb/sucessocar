@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title)
-    base_title = "Servos Taxi é um luxo"
+    base_title = "Grupo Sucesso Car"
     if page_title.empty?
       base_title
     else

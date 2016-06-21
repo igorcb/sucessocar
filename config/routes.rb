@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   #match '/table_prices/confirm/:id', :controller=>'table_prices', :action => 'confirm', via: [:get, :post]
   #match '/dashboard_agent', :controller => 'static_pages', :action => 'dashboard_agent', via: [:get, :post]
   resources :rates
-  root 'static_pages#home'
+  #root 'static_pages#home'
+  #root :to => "devise/sessions#new"
+  root :to => redirect("/auth/login")
 
   get 'search' => 'search_tax#search'
 
@@ -24,7 +26,6 @@ Rails.application.routes.draw do
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout' }
   #devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', registration: 'register', sign_up: 'cmon_let_me_in' }
   resources :users
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

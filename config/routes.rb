@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :black_lists
   resources :table_prices do
     member do 
       get :confirm

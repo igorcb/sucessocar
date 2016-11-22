@@ -1,0 +1,26 @@
+<%= form_for(@black_list) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fone %><br>
+    <%= f.text_field :fone, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :motivo %><br>
+    <%= f.text_area :motivo, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
+    <%= link_to "Exibir",  black_list_path(@black_list), class: "btn btn-info" if !@black_list.new_record? %>
+    <%= link_to "Listar Todos", black_lists_path, class: "btn btn-default" %>
+
+  </div>
+<% end %>

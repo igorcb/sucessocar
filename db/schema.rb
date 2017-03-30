@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221134835) do
+ActiveRecord::Schema.define(version: 20161122103648) do
+
+  create_table "black_lists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "fone"
+    t.string   "cpf"
+    t.text     "motivo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "districts", force: :cascade do |t|
     t.string "name"
